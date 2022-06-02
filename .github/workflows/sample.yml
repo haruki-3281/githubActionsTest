@@ -21,6 +21,6 @@ jobs:
 
       - name: ls test
         run: |
-          ls \
-          docker -v \
-          gcloud  
+          ls && \
+          docker -v && \
+          gcloud 
