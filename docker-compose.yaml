@@ -1,0 +1,7 @@
+version: '3'
+
+services:
+  php:
+    image: gcr.io/asterism-351904/asterism-end:latest
+    ports:
+      - 80:80
