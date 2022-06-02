@@ -27,6 +27,5 @@ jobs:
           known_hosts: ${{ secrets.GCP_SSH_KEY_PUB }}
 
       - name: ssh test
-        run: |
-          ssh haruharuharu0328@35.223.124.139 && \
-          ls
+        run: ls
+          
