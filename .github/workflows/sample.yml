@@ -10,5 +10,16 @@ jobs:
   print-hello-world:
     runs-on: ubuntu-latest
     steps:
+      - id: "auth"
+        uses: "google-github-actions/auth@v0"
+        with: 
+          credentials_json: "${{ secrets.GCP_AUTH }}"
+      
+      - name: "Set up Cloud SDK"
+        uses: "google-github-actions/setup-gcloud@v0"
+
+      - name: "Use gcloud CLI"
+        run: "gcloud info"
+
       - name: execute echo command
         run: echo "hello world"
