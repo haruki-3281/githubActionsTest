@@ -23,4 +23,4 @@ jobs:
         run: |
           ls && \
           docker -v && \
-          gcloud 
+          gcloud \
