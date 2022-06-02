@@ -7,9 +7,10 @@ on:
   workflow_dispatch:
 
 jobs:
-  print-hello-world:
+  job_id:
     runs-on: ubuntu-latest
     steps:
+      - uses: 'actions/checkout@v3'
       - id: "auth"
         uses: "google-github-actions/auth@v0"
         with: 
