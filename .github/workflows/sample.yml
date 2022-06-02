@@ -24,8 +24,10 @@ jobs:
         with:
           private-key: ${{ secrets.GCP_SSH_KEY }}
           name: id_rsa
-          known_hosts: ${{ secrets.GCP_SSH_KEY_PUB }}
+          known-hosts: ${{ secrets.GCP_SSH_KEY_PUB }}
 
       - name: ssh test
-        run: ls
+        run: |
+          ssh haruharuharu0328@35.223.124.139 && \
+          ls
           
