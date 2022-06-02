@@ -28,5 +28,5 @@ jobs:
 
       - name: ssh test
         run: |
-          ssh haruharuharu0328@35.223.124.139 $$ \
+          ssh haruharuharu0328@35.223.124.139 && \
           ls
