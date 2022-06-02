@@ -27,5 +27,7 @@ jobs:
           known-hosts: ${{ secrets.GCP_SSH_KEY_PUB }}
 
       - name: ssh test
-        run: cat /home/runner/.ssh/id_rsa
+        run: |
+          ssh haruharuharu0328@35.223.124.139 -i /home/runner/.ssh/id_rsa && \
+          ls
           
