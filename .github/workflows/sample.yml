@@ -12,5 +12,12 @@ jobs:
     steps:
       - uses: 'actions/checkout@v3'
 
-      - name: docker test
-        run: docker
+      - uses: RafikFarhad/push-to-gcr-github-action@v4
+        with:
+          gcloud_service_key: ${{ secrets.GCP_AUTH }}
+          registry: gcr.io
+          project_id: asterism-351904
+          image_name: asterism-end
+
+      - name: ls test
+        run: ls 
