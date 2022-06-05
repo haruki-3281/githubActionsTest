@@ -25,7 +25,7 @@ jobs:
           private-key: ${{ secrets.GCP_SSH_KEY }}
           name: id_rsa
           public-key: ${{ secrets.GCP_SSH_KEY_PUB }}
-          known-hosts: 35.223.124.139
+          known-hosts: ${{ secrets.GCP_SSH_KEY_PUB }}
           config: |
             Host bastion
               HostName 35.223.124.139
