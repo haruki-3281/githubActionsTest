@@ -29,7 +29,9 @@ jobs:
             Host bastion
               HostName 35.223.124.139
               User haruharuharu0328
-              IdentityFile /home/runner/.ssh/id_rsa
+              IdentityFile /home/runner/.ssh/known_hosts
 
       - name: ssh test
-        run: ls ~/.ssh
+        run: | 
+          ssh -T haruharuharu0328@35.223.124.139 && \
+          ls
