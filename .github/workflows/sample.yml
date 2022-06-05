@@ -33,6 +33,6 @@ jobs:
 
       - name: ssh test
         run: |
-          ssh -T haruharuharu0328@35.223.124.139 -i /home/runner/.ssh/od_rsa && \
+          ssh -T haruharuharu0328@35.223.124.139 -i /home/runner/.ssh/id_rsa && \
           ls
           
