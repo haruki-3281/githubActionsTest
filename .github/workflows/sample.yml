@@ -24,7 +24,6 @@ jobs:
         with:
           private-key: ${{ secrets.GCP_SSH_KEY }}
           name: id_rsa
-          public-key: ${{ secrets.GCP_SSH_KEY_PUB }}
           known-hosts: ${{ secrets.GCP_SSH_KEY_PUB }}
           config: |
             Host bastion
@@ -33,6 +32,4 @@ jobs:
               IdentityFile /home/runner/.ssh/id_rsa
 
       - name: ssh test
-        run: |
-          ssh -T haruharuharu0328@35.223.124.139 && \
-          ls
+        run: ls ~/.ssh
