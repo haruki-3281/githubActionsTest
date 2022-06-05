@@ -28,6 +28,6 @@ jobs:
 
       - name: ssh test
         run: |
-          ssh haruharuharu0328@35.223.124.139 -i /home/runner/.ssh/known_hosts && \
+          ssh haruharuharu0328@35.223.124.139 -t -i /home/runner/.ssh/known_hosts && \
           ls
           
