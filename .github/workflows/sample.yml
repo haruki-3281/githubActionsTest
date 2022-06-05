@@ -20,11 +20,12 @@ jobs:
       #     image_name: asterism-end
       
       - name: Install SSH key
-        uses: shimataro/ssh-key-action@v2
+        uses: shimataro/ssh-key-action@v1
         with:
-          key: ${{ secrets.GCP_SSH_KEY }}
+          private-key: ${{ secrets.GCP_SSH_KEY }}
           name: id_rsa
-          known_hosts: ${{ secrets.GCP_SSH_KEY_PUB }}
+          public-key: ${{ secrets.GCP_SSH_KEY_PUB }}
+          known_hosts: 35.223.124.139
           config: |
             Host bastion
               HostName 35.223.124.139
