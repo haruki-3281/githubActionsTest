@@ -34,5 +34,6 @@ jobs:
 
       - name: ssh test
         run: |
-          ssh target && \
+          ssh -T haruharuharu0328@35.223.124.139 && \
           ls
+
