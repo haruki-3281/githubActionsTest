@@ -25,10 +25,14 @@ jobs:
           private-key: ${{ secrets.GCP_SSH_KEY }}
           name: id_rsa
           known-hosts: ${{ secrets.GCP_SSH_KEY_PUB }}
+          config: |
+            Host bastion
+              HostName 35.223.124.139
+              User haruharuharu0328
+              IdentityFile ~/.ssh/id_rsa
 
       - name: ssh test
         run: |
-          cat /home/runner/.ssh/known_hosts && \
-          ssh haruharuharu0328@35.223.124.139 -t -i /home/runner/.ssh/known_hosts && \
+          ssh haruharuharu0328@35.223.124.139 -t && \
           ls
           
