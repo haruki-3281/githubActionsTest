@@ -36,3 +36,4 @@ jobs:
         run: |
           ssh -T -o StrictHostKeyChecking=no haruharuharu0328@35.223.124.139 && \
           ls
+          
