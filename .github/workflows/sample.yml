@@ -32,4 +32,4 @@ jobs:
               IdentityFile ~/.ssh/id_rsa
               
       - name: ssh test
-        run: ssh gcp "cd githubActionsTest && docker compose down && docker compose up -d"
+        run: ssh gcp "cd githubActionsTest && docker compose pull && docker compose up -d"
