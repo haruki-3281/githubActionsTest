@@ -2,11 +2,11 @@ FROM php:7.4-apache
 
 COPY . /var/www/html
 
-RUN apt-get install && docker-php-ext-install pdo_mysql \
-    && apt-get install -y git \
-    && apt-get install -y memcached \
-    && apt-get install -y libmemcached-dev \
-    && apt-get install -y zlib1g-dev \
-    && pecl install memcached \
-    && docker-php-ext-enable memcached \
-    && service apache2 start
+RUN apt-get update
+RUN apt-get install -y memcached libmemcached-dev zlib1g-dev
+
+RUN pecl install memcached
+
+RUN docker-php-ext-enable memcached
+
+RUN docker-php-ext-install pdo_mysql
