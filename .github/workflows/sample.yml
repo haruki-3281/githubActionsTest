@@ -30,6 +30,7 @@ jobs:
               HostName 35.223.124.139
               User haruharuharu0328
               IdentityFile ~/.ssh/id_rsa
+              
 
       - name: ssh test
-        run: ssh gcp "docker compose build && docker compose restart"
+        run: ssh gcp "cd githubActionsTest && docker compose build && docker compose restart"
