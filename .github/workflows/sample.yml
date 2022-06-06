@@ -12,12 +12,12 @@ jobs:
     steps:
       - uses: 'actions/checkout@v3'
 
-      # - uses: RafikFarhad/push-to-gcr-github-action@v4
-      #   with:
-      #     gcloud_service_key: ${{ secrets.GCP_AUTH }}
-      #     registry: gcr.io
-      #     project_id: asterism-351904
-      #     image_name: asterism-end
+      - uses: RafikFarhad/push-to-gcr-github-action@v4
+        with:
+          gcloud_service_key: ${{ secrets.GCP_AUTH }}
+          registry: gcr.io
+          project_id: asterism-351904
+          image_name: asterism-end
       
       - name: Install SSH key
         uses: shimataro/ssh-key-action@v1
@@ -26,13 +26,10 @@ jobs:
           name: id_rsa
           known-hosts: ${{ secrets.GCP_SSH_KEY_PUB }}
           config: |
-            Host 35.223.124.139
+            Host gcp
               HostName 35.223.124.139
               User haruharuharu0328
               IdentityFile ~/.ssh/id_rsa
 
       - name: ssh test
-        run: | 
-          ssh -T haruharuharu0328@35.223.124.139 && \
-          ls
-
+        run: ssh gcp "docker compose build && docker compose restart"

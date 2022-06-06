@@ -1,6 +1,6 @@
 FROM php:7.4-apache
 
-COPY index.html /var/www/html
+COPY . /var/www/html
 
 RUN apt-get install && docker-php-ext-install pdo_mysql \
     && apt-get install -y git \
