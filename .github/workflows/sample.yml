@@ -31,6 +31,5 @@ jobs:
               User haruharuharu0328
               IdentityFile ~/.ssh/id_rsa
               
-
       - name: ssh test
-        run: ssh gcp "cd githubActionsTest && docker compose build && docker compose restart"
+        run: ssh gcp "cd githubActionsTest && docker compose down && docker compose up"
